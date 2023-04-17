@@ -1,5 +1,10 @@
 import { getDiceRollArray, getDicePlaceholderHtml, getPercentage } from './utils.js'
 
+const forest = new Audio('/utility/sounds/The Dark Forest/forest.mp3')
+const mountains = new Audio('/utility/sounds/Mountains of Madness/mountain.mp3')
+const wasteland = new Audio('/utility/sounds/Plains of Despair/wasteland.mp3')
+const castle = new Audio('/utility/sounds/Castle of Shadows/castle.mp3')
+
 function Character(data) {
     Object.assign(this, data)
     this.maxHealth = this.health
@@ -33,7 +38,48 @@ function Character(data) {
     
 
     this.getCharacterHtml = function () {
-        const { elementId, name, avatar, health, diceCount, diceHtml } = this
+        const { elementId, name, avatar, health, diceCount, diceHtml, isDarkForest, isMountainsOfMadness, isCastleOfShadows, isPlainsOfDispair } = this
+        
+        function handleEnviroment(){
+            if(isDarkForest){
+                document.querySelector('body').style.backgroundImage = 'url("/images/The Dark Forest/forest.jpg") '
+                document.querySelector('body').style.backgroundRepeat = 'no-repeat'
+                document.querySelector('body').style.backgroundPosition = 'center center'
+                document.querySelector('body').style.backgroundAttachment = 'fixed'
+                forest.volume = 0.3;
+                forest.loop = true;
+                forest.play();
+            }else if(isMountainsOfMadness){
+                document.querySelector('body').style.backgroundImage = 'url("/images/Mountains of Madness/mountains.png")'
+                document.querySelector('body').style.backgroundRepeat = 'no-repeat'
+                document.querySelector('body').style.backgroundPosition = 'center center'
+                document.querySelector('body').style.backgroundAttachment = 'fixed'
+                forest.pause()
+                mountains.volume = 0.2;
+                mountains.loop = true;
+                mountains.play();
+            }else if(isPlainsOfDispair){
+                document.querySelector('body').style.backgroundImage = 'url("/images/Plains of Despair/wasteland.jpg")'
+                document.querySelector('body').style.backgroundRepeat = 'no-repeat'
+                document.querySelector('body').style.backgroundPosition = 'center center'
+                document.querySelector('body').style.backgroundAttachment = 'fixed'
+                mountains.pause()
+                wasteland.volume = 0.2;
+                wasteland.loop = true;
+                wasteland.play();
+            } 
+            else if(isCastleOfShadows){
+                document.querySelector('body').style.backgroundImage = 'url("/images/Castle of Shadows/castle.jpg")'
+                document.querySelector('body').style.backgroundRepeat = 'no-repeat'
+                document.querySelector('body').style.backgroundPosition = 'center center'
+                document.querySelector('body').style.backgroundAttachment = 'fixed'
+                wasteland.pause()
+                castle.volume = 0.2;
+                castle.loop = true;
+                castle.play();
+            }
+        }
+        handleEnviroment()
         const healthBar = this.getHealthBarHtml()
         return `
             <div class="character-card">
