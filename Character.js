@@ -26,7 +26,6 @@ function Character(data) {
         }
     }
 
-
     this.getHealthBarHtml = function () {
         const percent = getPercentage(this.health, this.maxHealth)
         return `<div class="health-bar-outer">
@@ -94,4 +93,4 @@ function Character(data) {
     }
 }
 
-export default Character
+export {Character}

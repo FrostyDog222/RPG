@@ -207,7 +207,7 @@ button:focus { outline: 0 }
     position: absolute;
     top: 0;
     left: 0;
-    z-index: 1;
+    z-index: 4;
     width: 100%;
     height: 100%;
     background: rgb(51,43,55);
@@ -231,4 +231,95 @@ button:focus { outline: 0 }
 
 #story-container > h1{
     font-size: 45px;
+}
+
+/* Shop */
+.shop-info {
+    z-index: 3;
+    display: flex;
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    height: 40px;
+    margin: 0.9em 0 0 1.4em;
+}
+
+#coins {
+    padding: 0 0em 0 0em;
+    margin: 0.5em 0;
+    font-size: 30px;
+}
+
+.coins-info {
+    display: flex;
+}
+
+.coin-icon {
+    width: 50px;
+    height: 50px;
+    padding: 0;
+    margin: 0.4em 0 0 1.5em;
+}
+
+#shop-button {
+    padding: 0 1em;
+    height: 60px;
+    border-radius: 50px;
+}
+
+#shop {
+    position:absolute;
+    top: 0.8%;
+    left: 0%;
+    margin: 0 1em;
+    width: 470px;
+    height: 730px;
+    background: rgb(138, 123, 146);
+    padding: 4.5em 1em 1em 1em;
+    border-radius: 20px;
+    z-index: 2;
+    display: none;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.shop-slot > img {
+    width: 90px;
+    height: 110px;
+    margin: 0.5em 0 0 0;
+    border-radius: 20px;
+}
+
+.shop-description {
+    width: 250px;
+    margin: 1em 0.5em;
+}
+
+.shop-slot {
+    display: flex;
+    background-color: #171217;
+    margin: 0.6em 0;
+    padding: 1em;
+    border-radius: 20px;
+}
+
+.buy-button {
+    text-align: center;
+    width: 20px;
+    height: 65px;
+    padding: 1em 2.5em 1em 0.7em;
+    margin: 0.2em 0 0 0;
+    font-size: 20px;
+}
+
+.price-label {
+    font-weight: bold;
+}
+  
+.price-value {
+    color: gold;
 }

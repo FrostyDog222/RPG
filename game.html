@@ -18,14 +18,71 @@
                     <button id="story-button">Continue...</button>
                 </div>
             </div>
+            <div class="shop-info">
+                <button id="shop-button">Show Shop</button>
+                <div class="coins-info">
+                    <img class="coin-icon" src="/images/coin.png" />
+                    <p id="coins">300</p>
+                </div>
+            </div>
+            <div id="shop">
+                <ul>
+                    <li>
+                        <div class="shop-slot">
+                            <img src="/images/healing potion.jpg"/>
+                            <p class="shop-description">A small potion that can restore a small amount of health when consumed. It is often used as a quick way to recover from minor injuries in combat.</p>
+                            <div>
+                                <button class="buy-button" id="health-potion">Buy</button>
+                                <p class="price"><span class="price-label">Price:</span><br><span class="price-value">30 gold</span></p>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="shop-slot">
+                            <img src="/images/attack potion.jpg"/>
+                            <p class="shop-description">This potion grants a permanent boost to your attack power, making you a more formidable opponent in battle.</p>
+                            <div>
+                                <button class="buy-button" id="attack-potion">Buy</button>
+                                <p class="price"><span class="price-label">Price:</span><br><span class="price-value">30 gold</span></p>
+                            </div>
+                        </div>
+                    </li>
+                        <div class="shop-slot staff">
+                            <img src="/images/staff.jpg"/>
+                            <p class="shop-description">The Magic Staff is a powerful tool that channels arcane forces to unleash devastating spells on foes, making it a must-have for any mage.</p>
+                            <div>
+                                <button class="buy-button" id="staff">Buy</button>
+                                <p class="price"><span class="price-label">Price:</span><br><span class="price-value">30 gold</span></p>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="shop-slot">
+                            <img src="/images/armor.jpg"/>
+                            <p class="shop-description">A mystical armor that provides powerful defense against magical attacks, making the wearer nearly invincible to spells and curses.</p>
+                            <div>
+                                <button class="buy-button" id="armor">Buy</button>
+                                <p class="price"><span class="price-label">Price:</span><br><span class="price-value">30 gold</span></p>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="monster-damage"></div>
             <div id="hero">              
             </div>
+            <div class="wizard-damage"></div>
             <div id="monster">
             </div>    
         </main>
         <section id="actions">
             <button id="attack-button">Attack</button>
         </section>
+        <script>
+            if (performance.navigation.type === 1) {
+              window.location.href = "index.html";
+            }
+        </script>
         <script type="module" src="index.js" defer ></script>
     </body>
 </html>

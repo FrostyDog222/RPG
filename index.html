@@ -9,6 +9,10 @@
     <link rel="stylesheet" href="start.css" defer>
   </head>
   <body>
+    <button onclick="playMusic()" id="music-btn"><img src="/images/mute.png"/></button>
+    <audio id="bg-music" loop>
+      <source src="/utility/sounds/menu.mp3" type="audio/mpeg">
+    </audio>
     <div class="container">
       <img class="logo" src="/images/logo.png"/>
       <p>Welcome to Zoltan's Adventure Game! In this game, Zoltan the wizard will face terrifying monsters in four different regions.
@@ -16,6 +20,20 @@
           the monsters can also strike back and deal damage to our wizard. Are you ready to embark on this magical journey and help Zoltan save the day?
           Let's roll the dice and find out!
       <a href="game.html"><button>Play the Game</button></a>
+      <script>
+      function playMusic() {
+        let audio = document.getElementById("bg-music");
+        let musicBtnImg = document.getElementById("music-btn").getElementsByTagName("img")[0];
+        audio.volume = 0.5;
+        if (audio.paused) {
+          audio.play();
+          musicBtnImg.src = "/images/volume.png";
+        } else {
+          audio.pause();
+          musicBtnImg.src = "/images/mute.png";
+        }
+      }
+      </script>
     </div>
   </body>
 </html>

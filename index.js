@@ -1,5 +1,5 @@
 import characterData from './data.js'
-import Character from './Character.js'
+import {Character} from './Character.js'
 // Dice and attack
 const fireball = new Audio('/utility/sounds/fireball attack.mp3')
 const diceThrow = new Audio('/utility/sounds/dice.mp3')
@@ -28,12 +28,34 @@ const Necromancer = new Audio('/utility/sounds/Castle of Shadows/necromancer.mp3
 const Gargantuan = new Audio('/utility/sounds/Castle of Shadows/gargantuan.mp3')
 const Malakar = new Audio('/utility/sounds/Castle of Shadows/malakar the shadow lord.mp3')
 
+// story
 const storyBody = document.getElementById('story-body')
 const storyContainer = document.getElementById('story-container')
 const storyBtn = document.getElementById('story-button')
 const storyTitle = document.getElementById('story-title')
 const storyText = document.getElementById('story-text')
 let storyShown = false
+
+// shop
+const shopBtn = document.getElementById('shop-button')
+const shop = document.getElementById('shop')
+const healthPotion = document.getElementById('health-potion')
+const attackPotion = document.getElementById('attack-potion')
+const staff = document.getElementById('staff')
+const armor = document.getElementById('armor')
+
+
+function handleShop(){
+    if (shop.style.display === "none") {
+        shop.style.display = "block";
+        shopBtn.textContent = "Hide Shop"
+    }else {
+        shop.style.display = "none";
+        shopBtn.textContent = "Show Shop"
+    }
+}
+
+shopBtn.addEventListener('click', handleShop)
 
 function hideStory(){
     storyBody.style.display = 'none'
