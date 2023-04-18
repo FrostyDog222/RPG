@@ -143,6 +143,7 @@ function extraArmor(){
     }
 }
 
+shop.style.display = 'none'
 
 function handleShop(){
     if (shop.style.display === "none") {
