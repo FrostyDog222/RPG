@@ -200,6 +200,7 @@ let monstersArray = [
 let isWaiting = false
 
 function getNewMonster() {
+    const nextMonsterData = characterData[monstersArray.shift()]
     if (money === null){
         money = 0
     }else if (nextMonsterData.name === "Troll"){
@@ -213,7 +214,6 @@ function getNewMonster() {
     }
     extraHealth()
     addCoins()
-    const nextMonsterData = characterData[monstersArray.shift()]
     return nextMonsterData ? new Character(nextMonsterData) : {}
 }
 
