@@ -41,7 +41,7 @@ button:active {
 .container {
     width: 600px;
     text-align: center;
-    margin: 4.8em;
+    margin: 4vh;
     background: rgb(23, 12, 29, 0.7);
     padding: 8em 10em 4em 10em;
     border-radius: 20px;
@@ -92,9 +92,10 @@ h1{
     }
 
     .container > p {
-        font-size: 20px;
-        padding: 0;
-        margin: 0;
+        font-size: 18px;
+        margin-left: -5.5em;
+        min-width: 400px;
+        
     }
     
     .logo {

@@ -208,7 +208,7 @@ function getNewMonster() {
         money = money + 100
     }else if (nextMonsterData.name === "Gargoyle"){
         money = money + 150
-    }else if (nextMonsterData.name === "Shadwo Demon"){
+    }else if (nextMonsterData.name === "Shadow Demon"){
         money = money + 200
     }else {
         money = money + Math.floor(Math.random() * 40) + 10

@@ -13,23 +13,15 @@ body {
 
 main {
     display:flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: .5rem;
+    flex-direction: row;
+    margin:6vh 5vw;
+    justify-content: center;
+    width:86vw;
+    gap: 2rem;
 } 
 
-@media(min-width:550px){
-   main {
-        flex-direction: row;
-        margin:6vh 5vw;
-        justify-content: center;
-        width:86vw;
-        gap: 2rem;
-    } 
-}
-
 .character-card {
-    height: 400px;
+    height: 370px;
     margin-top: .5rem;
     width:37vw;
     max-width: 230px;
@@ -52,13 +44,6 @@ main {
     font-size: 90%;
 }
 
-@media(min-width:550px){
-    .name {
-    margin: 2vh 0;
-    font-size: 100%;
-}
-}
-
 .avatar {
     width: 200px;
     height: 250px;
@@ -76,12 +61,6 @@ main {
     margin: 1vh 5%;
     color:#ccc;
     letter-spacing: 0.03em
-}
-
-@media(min-width:550px){
-    .health {
-        margin: 2vh 5%;
-    }
 }
 
 .health b {
@@ -109,7 +88,7 @@ main {
 
 .dice-container {
     width:100%;
-    height: 20%;
+    height: 17%;
     position: absolute;
     bottom:0;
     left:0px;
@@ -126,7 +105,7 @@ main {
 
 .dice, .placeholder-dice{
     height:60px;
-    width:60px;
+    width:20px;
     background: #fff;   
     border-radius: 5px;
     border:1px solid #666;
@@ -139,14 +118,19 @@ main {
     background-color: transparent;
 }
 
+.dice-container .dice, .dice-container .placeholder-dice{
+    height:8.5vh;
+    width:8.5vh;
+    line-height: 9vh;
+}
+
 button {
     margin-top: .5rem;
     font-family: 'MedievalSharp', cursive;
     background-color: #fcc02a;
     border: 2px solid #963404;
     outline: none;
-    padding-left:5vw;
-    padding-right:5vw;
+    padding: 0 1.8rem;
     text-align: center;
     text-decoration: none;
     display: inline-block;
@@ -168,17 +152,11 @@ button:active {
     background-color: #c2b28c;
 }
 
-@media(min-width:550px){
-    button {
-        margin-top: 0;
-    }
-}
-
 
 button:focus { outline: 0 }
 
 .end-game{
-    margin: 10em 20em;
+    margin: 6vh 20em;
     text-align: center;
     background: rgba(0, 0, 0, 0.8);
     border-radius: 50px;
@@ -192,10 +170,11 @@ button:focus { outline: 0 }
 
 .end-emoji{
     font-size: 80px;
+    margin: .5em;
 }
 
 .container {
-    width: 600px;
+    width: 200px;
     text-align: center;
     margin: 10em;
     background: rgb(23, 12, 29, 0.7);
@@ -342,4 +321,164 @@ ul {
     80% { transform: translate(2px, 0); }
     90% { transform: translate(-2px, 0); }
     100% { transform: translate(0, 0); }
+}
+
+@media(max-width:550px){
+    main {
+        display:flex;
+        flex-direction: column;
+        align-items: center;
+        margin: .5rem;
+        gap: 0;
+     } 
+ }
+
+ @media(max-width:550px){
+    .character-card {
+        border: 0.2rem solid #000721;
+        height:12.5rem;
+        width: 15rem;
+    }
+    .character-card > img {
+        width: 11rem;
+        height: 10rem;
+    }
+    #attack-button{
+        margin: 0;
+    }
+}
+
+@media(min-width:550px){
+    .name {
+    margin: 2vh 0;
+    font-size: 100%;
+}
+}
+
+@media(min-width:550px){
+    .avatar {
+        width: 25vh;
+    }
+}
+
+@media(min-width:550px){
+    .health {
+        margin: 2vh 5%;
+    }
+}
+
+@media(max-width:550px){
+    .dice-container {
+        height: 18%;
+        border-bottom-left-radius: 3px;
+        border-bottom-right-radius: 3px;
+    }
+}
+
+@media(max-width:550px){
+    .dice-container .dice, .dice-container .placeholder-dice{
+        height:6vh;
+        width:6vh;
+        line-height: 6vh;
+    }
+    }
+
+@media(max-width:550px){
+    button {
+        margin: 0;
+        width: 8rem;
+    }
+    
+    #shop {
+        position:absolute;
+        top: 0.8%;
+        left: 0%;
+        margin: 0;
+        width: 455px;
+        height: 700px;
+        background: rgb(138, 123, 146);
+        padding: 4em 1em 1em 1em;
+        border-radius: 20px;
+        z-index: 2;
+        display: none;
+    }
+    #shop > img {
+        width: 30px;
+        height: 30px;
+    }
+
+    #shop-button {
+        padding: 0;
+        width: 100px;
+        height: 60px;
+        border-radius: 50px;
+        margin: 0 10em 0 -.5em;
+    }
+
+    .shop-description {
+        width: 250px;
+        margin: 1em 1em;
+    }
+    
+    .shop-slot {
+        display: flex;
+        height: 150px;
+        background-color: #171217;
+        margin: 0.6em 0;
+        padding: 0.2em 1em;
+        border-radius: 20px;
+    }
+
+    #coins {
+        padding: 0;
+        margin: 0.5em 0;
+        font-size: 30px;
+    }
+    
+    
+}
+
+
+@media only screen and (max-width: 550px) {
+    
+    #story-container {
+        width: 300px;
+        margin: 1em 1em 20em 1em;
+    }
+    
+    #story-container > p {
+        font-size: 20px;
+    }
+    
+    #story-container > h1{
+        font-size: 40px;
+    }
+
+    #story-container > button {
+        padding: 0 1.8rem;
+        text-align: center;
+        height:9vh;
+        width: 170px;
+    }
+}
+
+@media only screen and (max-width: 550px) {
+    .end-game{
+        margin: 2em 20em;
+        text-align: center;
+        background: rgba(0, 0, 0, 0.8);
+        border-radius: 50px;
+        padding: 1em;
+    }
+    
+    .end-game > h3{
+        font-size: 20px;
+        width: 400px;
+        margin: 0 auto;
+    }
+    
+    .end-emoji{
+        font-size: 70px;
+        margin: 0.5em;
+    }
 }
