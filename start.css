@@ -74,3 +74,30 @@ h1{
     padding: 0;
     margin: 0;
 }
+
+/* Starting page for small screens */
+@media only screen and (max-width: 550px) {
+    #music-btn {
+        position: absolute;
+        left: 80%;
+        top: 0%;
+        border-radius: 100%;
+    }
+
+    .container {
+        width: 180px;
+        text-align: center;
+        margin: 0;
+    }
+
+    .container > p {
+        font-size: 20px;
+        padding: 0;
+        margin: 0;
+    }
+    
+    .logo {
+        width: 400px;
+    }
+
+}
