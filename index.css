@@ -352,39 +352,28 @@ ul {
 
 @media(max-width:550px){
     .name {
-    margin: 1rem 0;
-    font-size: 100%;
-}
-}
-
-@media(max-width:550px){
+        margin: 1rem 0;
+        font-size: 100%;
+    }
     .avatar {
         width: 25vh;
         height: 20vh;
     }
-}
-
-@media(max-width:550px){
     .health {
         margin: 1rem 5%;
     }
-}
-
-@media(max-width:550px){
     .dice-container {
         height: 18%;
         border-bottom-left-radius: 3px;
         border-bottom-right-radius: 3px;
     }
-}
-
-@media(max-width:550px){
     .dice-container .dice, .dice-container .placeholder-dice{
         height:6vh;
         width:6vh;
         line-height: 6vh;
     }
-    }
+}
+
 
 @media(max-width:550px){
     button {
@@ -443,7 +432,6 @@ ul {
 
 
 @media(max-width:550px) {
-    
     #story-container {
         width: 300px;
         margin: 1em 1em 20em 1em;
@@ -468,9 +456,6 @@ ul {
 @media(max-width:550px) {
     .end-game{
         margin: 2em 20em;
-        text-align: center;
-        background: rgba(0, 0, 0, 0.8);
-        border-radius: 50px;
         padding: 1em;
     }
     
@@ -484,4 +469,162 @@ ul {
         font-size: 70px;
         margin: 0.5em;
     }
+}
+
+
+@media(min-height:1080px){
+    /* Story */
+    #story-container {
+        width: 46rem;
+        margin: 13rem auto;
+    }
+    
+    #story-container > p {
+        font-size: 3rem;
+    }
+    
+    #story-container > h1{
+        font-size: 4rem;
+    }
+
+    #story-container > button {
+        padding: 0 1.8rem;
+        text-align: center;
+        height: 10rem;
+        width: 20rem;
+        font-size: 3.3rem;
+    }
+
+    /* Main game */
+    .character-card {
+        margin: 10rem 0 0 0;
+        width: 27rem;
+        height: 48rem;
+        font-size: 1.6rem;
+    }
+    .name {
+        margin: 1rem 0;
+        font-size: 3.5rem;
+    }
+    .avatar {
+        width: 25rem;
+        height: 30rem;
+    }
+    .health {
+        font-size: 2.5rem;
+    }
+    .health-bar-outer .health-bar-inner {
+        height: 1.5rem;
+    }
+    .dice-container {
+        width: 27.4rem;
+    }
+    .dice-container .dice, .dice-container .placeholder-dice{
+        height:  7rem;
+        width: 7rem;
+        line-height: 7rem;
+        font-size: 3.6rem;
+    }
+    button {
+        font-size: 6rem;
+        margin: 0 2rem;
+        width: 40rem;
+        height: 15rem;
+    }
+    
+    /* Shop */
+    #shop {
+        position:absolute;
+        top: 0.8%;
+        left: 0%;
+        margin: 0;
+        width: 75rem;
+        height: 115rem;
+        padding: 10em 2em 2em 2em;
+        border-radius: 20px;
+        z-index: 2;
+        display: none;
+    }
+    .shop-slot > img {
+        width: 20rem;
+        height: 20rem;
+        padding: 1rem;
+        border-radius: 20%;
+    }
+
+    #shop-button {
+        font-size: 3rem;
+        margin: 2rem;
+        width: 30rem;
+        height: 9rem;
+        margin: 0 1.2em 0 -.5em;
+        font-size: 4rem;
+    }
+    
+    #coins {
+        padding: 0;
+        margin: 0;
+        font-size: 10rem;
+    }
+    .coin-icon {
+        width: 9rem;
+        height: 9rem;
+    }
+
+    .shop-description {
+        width: 30rem;
+        height: 15rem;
+        font-size: 2.7rem;
+        padding: .5rem;
+    }
+    
+    .shop-slot {
+        width: 74rem;
+        height: 28rem;
+        margin: 0.6em 0;
+        padding: 0.2em 1em;
+        border-radius: 20px;
+    }
+
+    .buy-button {
+        text-align: center;
+        width: 15rem;
+        height: 10rem;
+        padding: 2rem;
+        margin: 0.2em 0 0 0;
+        font-size: 5rem;
+    }
+    
+    .price-label {
+        font-size: 4rem;
+        font-weight: bold;
+    }
+      
+    .price-value {
+        font-size: 4rem;
+        color: gold;
+    }
+
+    /* EndGame */
+
+    .end-game{
+        width: 50rem;
+        height: 80rem;
+        margin: 1em 20em;
+        border-radius: 50px;
+        padding: 1em;
+        font-size: 4rem
+    }
+    
+    .end-game > h3{
+        font-size: 20px;
+        font-size: 2.5rem;
+        margin: 0 auto;
+    }
+    
+    .end-emoji{
+        font-size: 10rem;
+        margin: 0.5em;
+    }
+
 }

@@ -105,3 +105,46 @@ h1{
     }
 
 }
+
+@media(min-height:1080px){
+    #music-btn {
+        position: absolute;
+        left: 80%;
+        right: 0%;
+        top: 0%;
+        border-radius: 100%;
+        width: 7.5rem;
+        height: 7.5rem;
+        margin-left: 4rem;
+    }
+
+    #music-btn > img {
+        width: 4.5rem;
+        padding: 0;
+        margin: 0;
+    }
+
+    .container {
+        width: 40rem;
+        text-align: center;
+        margin: 0;
+    }
+
+    .container > p {
+        font-size: 3rem;
+        min-width: 30rem;
+    }
+    
+    .logo {
+        width: 59rem;
+        margin: -5rem 0 2rem -9rem;
+    }
+
+    button {
+        font-size: 3rem;
+        margin: 2rem;
+        width: 27rem;
+        height: 12rem;
+    }
+
+}
