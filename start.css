@@ -8,6 +8,7 @@ body {
     align-items: center;
     color:#fff;
     font-family: 'MedievalSharp', cursive;
+    user-select: none;
 }
 
 button {

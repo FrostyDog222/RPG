@@ -6,6 +6,7 @@ const fireball = new Audio('/utility/sounds/fireball attack.mp3')
 const diceThrow = new Audio('/utility/sounds/dice.mp3')
 const monsterDiv = document.getElementById('monster')
 const wizardDiv = document.getElementById('hero')
+
 // The Dark Forest
 const GiantSpider = new Audio('/utility/sounds/The Dark Forest/spider.mp3')
 const Werewolf = new Audio('/utility/sounds/The Dark Forest/werewolf.mp3')
@@ -81,7 +82,7 @@ extraHealthPotion.addEventListener('click', function(){
 
 function extraHealth(){
     if(isExtraHealthPotion){
-        if(wizard.health > 150){
+        if(wizard.health < 150){
             wizard.health += Math.floor(Math.random() * 15) + 4
         }else{
             wizard.health = 150
@@ -221,6 +222,7 @@ function disableButton() {
     const button = document.getElementById("attack-button")
     button.disabled = true
     button.classList.add('disabled')
+    button.classList.remove('active')
     setTimeout(function() {
       button.disabled = false
       button.classList.remove('disabled')
@@ -442,6 +444,37 @@ function endGame() {
 document.getElementById("attack-button").addEventListener('click', attack)
 
 function render() {
+    switch(monster.name) {
+        case "Troll":
+            if (storyShown){
+                storyTitle.textContent = `Traveling to Mountains of Madness`
+                storyText.textContent = `These towering mountains are home to fierce trolls and other deadly creatures. The mountain peaks are covered in snow and ice, making travel treacherous. 
+                The only way to cross the mountains is through a treacherous network of caves that are said to be haunted by the spirits of those who have perished in the mountains.`
+                showStory()
+                storyShown = false
+            }
+            break
+        case "Gargoyle":
+            if(storyShown){
+                storyTitle.textContent = `Traveling to Plains of Despair`
+                storyText.textContent = `This barren wasteland is home to few creatures, but those that do live there are incredibly dangerous.
+                The plains are plagued by frequent sandstorms and sudden lightning storms, making travel across them incredibly dangerous.
+                The only sign of civilization is a massive castle that looms in the distance, said to be home to the source of the evil that plagues the land.`
+                showStory()
+                storyShown = false
+            }
+            break
+        case "Shadow Demon":
+            if(storyShown){
+                storyTitle.textContent = `Traveling to The Castle of Shadows`
+                storyText.textContent = `Now, Zoltar stands at the entrance of the dark and foreboding Castle of Shadows,
+                where the source of the evil lies. Armed with nothing but his trusty set of dice,
+                Zoltar must defeat the dark lord and save the land from destruction.`
+                showStory()
+                storyShown = false
+            }
+            break
+    }
     menuMusic.pause()
     document.getElementById('hero').innerHTML = wizard.getCharacterHtml()
     document.getElementById('monster').innerHTML = monster.getCharacterHtml()
