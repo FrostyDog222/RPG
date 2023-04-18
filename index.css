@@ -119,9 +119,9 @@ main {
 }
 
 .dice-container .dice, .dice-container .placeholder-dice{
-    height:8.5vh;
-    width:8.5vh;
-    line-height: 9vh;
+    height: 4rem;
+    width: 4rem;
+    line-height: 4rem;
 }
 
 button {
