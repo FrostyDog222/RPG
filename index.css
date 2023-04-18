@@ -517,7 +517,7 @@ ul {
         height: 1.5rem;
     }
     .dice-container {
-        width: 27.4rem;
+        width: 28..3rem;
     }
     .dice-container .dice, .dice-container .placeholder-dice{
         height:  7rem;
@@ -557,7 +557,7 @@ ul {
         margin: 2rem;
         width: 30rem;
         height: 9rem;
-        margin: 0 1.2em 0 -.5em;
+        margin: 0 .6em 0 -.5em;
         font-size: 4rem;
     }
     
@@ -589,7 +589,7 @@ ul {
     .buy-button {
         text-align: center;
         width: 15rem;
-        height: 10rem;
+        height: 15rem;
         padding: 2rem;
         margin: 0.2em 0 0 0;
         font-size: 5rem;
