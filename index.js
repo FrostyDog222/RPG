@@ -1,8 +1,11 @@
 import characterData from './data.js'
 import {Character} from './Character.js'
 // Dice and attack
+const menuMusic = new Audio('/utility/sounds/menu.mp3')
 const fireball = new Audio('/utility/sounds/fireball attack.mp3')
 const diceThrow = new Audio('/utility/sounds/dice.mp3')
+const monsterDiv = document.getElementById('monster')
+const wizardDiv = document.getElementById('hero')
 // The Dark Forest
 const GiantSpider = new Audio('/utility/sounds/The Dark Forest/spider.mp3')
 const Werewolf = new Audio('/utility/sounds/The Dark Forest/werewolf.mp3')
@@ -39,23 +42,140 @@ let storyShown = false
 // shop
 const shopBtn = document.getElementById('shop-button')
 const shop = document.getElementById('shop')
+const coins = document.getElementById('coins')
 const healthPotion = document.getElementById('health-potion')
-const attackPotion = document.getElementById('attack-potion')
+const extraHealthPotion = document.getElementById('extra-health-potion')
 const staff = document.getElementById('staff')
 const armor = document.getElementById('armor')
+let money = null
+let isExtraHealthPotion = false
+let isStaff = false
+let isArmor = false
+
+// Health Potion
+healthPotion.addEventListener('click', function(){
+    if(money >= 30 && wizard.health < 150){
+        wizard.health = wizard.health + 30
+        if(wizard.health > 150){
+            wizard.health = 150
+        }
+        money = money - 30
+        addCoins()
+        render()
+        console.log(wizard.health)
+    }
+})
+
+// Healing overtime potion
+extraHealthPotion.addEventListener('click', function(){
+    if(money >= 75){
+        money = money - 75
+        addCoins()
+        render()
+        isExtraHealthPotion = true
+        extraHealthPotion.disable = true
+        extraHealthPotion.style.background = "#c2b28c"
+        extraHealthPotion.textContent = "Sold Out"
+    }
+})
+
+function extraHealth(){
+    if(isExtraHealthPotion){
+        if(wizard.health > 150){
+            wizard.health += Math.floor(Math.random() * 15) + 4
+        }else{
+            wizard.health = 150
+        }
+        render()
+    }
+}
+
+// Staff +4 damage 
+staff.addEventListener('click', function(){
+    if(money >= 175){
+        money = money - 175
+        addCoins()
+        render()
+        isStaff = true
+        staff.disable = true
+        staff.style.background = "#c2b28c"
+        staff.textContent = "Sold Out"
+    }
+})
+
+function extraDamage(){
+    if(isStaff){
+        let newDamageArray = wizard.currentDiceScore
+        newDamageArray.push(4)
+        return newDamageArray
+    }else {
+        return wizard.currentDiceScore
+    }
+}
+
+// Armor -4 dmg from monster
+
+armor.addEventListener('click', function(){
+    if(money >= 175){
+        money = money - 175
+        addCoins()
+        render()
+        isArmor = true
+        armor.disable = true
+        armor.style.background = "#c2b28c"
+        armor.textContent = "Sold Out"
+    }
+})
+
+function extraArmor(){
+    if(isArmor){
+        let newDamageArray = monster.currentDiceScore
+        let sum = newDamageArray.reduce(function(a, b){
+            return a + b
+        }, 0)
+        let subtractedSum = sum - 5
+        if(subtractedSum < 0){
+            subtractedSum = 0
+        }
+        return [subtractedSum]
+    }else{
+        return monster.currentDiceScore
+    }
+}
 
 
 function handleShop(){
     if (shop.style.display === "none") {
-        shop.style.display = "block";
+        shop.style.display = "block"
         shopBtn.textContent = "Hide Shop"
     }else {
-        shop.style.display = "none";
+        shop.style.display = "none"
         shopBtn.textContent = "Show Shop"
     }
 }
 
 shopBtn.addEventListener('click', handleShop)
+
+function addCoins(){
+    if(money ===null){
+        money = 0
+        coins.textContent = money
+    }else {
+        coins.textContent = money
+    }
+}
+
+function shakeScreen(){
+    setTimeout(function(){
+        monsterDiv.classList.add('shake')
+        wizardDiv.classList.add('shake')
+    }, 1200)
+
+    setTimeout(function(){
+        monsterDiv.classList.remove('shake')
+        wizardDiv.classList.remove('shake')
+    }, 2500)
+}
 
 function hideStory(){
     storyBody.style.display = 'none'
@@ -79,6 +199,19 @@ let monstersArray = [
 let isWaiting = false
 
 function getNewMonster() {
+    if (money === null){
+        money = 0
+    }else if (nextMonsterData.name === "Troll"){
+        money = money + 100
+    }else if (nextMonsterData.name === "Gargoyle"){
+        money = money + 150
+    }else if (nextMonsterData.name === "Shadwo Demon"){
+        money = money + 200
+    }else {
+        money = money + Math.floor(Math.random() * 40) + 10
+    }
+    extraHealth()
+    addCoins()
     const nextMonsterData = characterData[monstersArray.shift()]
     return nextMonsterData ? new Character(nextMonsterData) : {}
 }
@@ -90,10 +223,11 @@ function disableButton() {
     setTimeout(function() {
       button.disabled = false
       button.classList.remove('disabled')
-    }, 4000);
+    }, 3500);
 }
 
 function attack() {
+    shakeScreen()
     disableButton()
     diceThrow.play();
     setTimeout(function() {
@@ -102,8 +236,8 @@ function attack() {
     if(!isWaiting){
         wizard.setDiceHtml()
         monster.setDiceHtml()
-        wizard.takeDamage(monster.currentDiceScore)
-        monster.takeDamage(wizard.currentDiceScore)
+        wizard.takeDamage(extraArmor())
+        monster.takeDamage(extraDamage())
         render()
         
         if(wizard.dead){
@@ -123,41 +257,6 @@ function attack() {
             }
         }    
     }
-}
-
-function endGame() {
-    isWaiting = true
-    const endMessage = wizard.health === 0 && monster.health === 0 ?
-        "No victors - all creatures are dead" :
-        wizard.health > 0 ? `
-        After a long and grueling battle, Zoltan emerged victorious over Malakar the Dark Lord and saved the land from destruction.
-        The people rejoiced and hailed him as a hero. With the evil vanquished, the world was once again filled with hope and light.
-        Zoltan's name would be remembered for generations to come as the one who saved the land from darkness.
-        ` :
-            `
-            The battle was intense and unforgiving. Zoltan fought with all his might, but in the end, he was defeated by Malakar the Dark Lord's power.
-            As he lay there, battered and broken, he knew that his journey had come to an end. The people mourned his loss and the world fell into a deep despair.
-            The darkness that had been vanquished before had returned, stronger than ever.
-            Zoltan's name would be remembered as a brave warrior who gave his life in the fight against evil.
-            `
-
-    const endEmoji = wizard.health > 0 ? "🔮" : "☠️"
-        setTimeout(()=>{
-            document.body.innerHTML = `
-                <div class="end-game">
-                    <h2>Game Over</h2> 
-                    <h3>${endMessage}</h3>
-                    <p class="end-emoji">${endEmoji}</p>
-                </div>
-                `
-        }, 1500)
-}
-
-document.getElementById("attack-button").addEventListener('click', attack)
-
-function render() {
-    document.getElementById('hero').innerHTML = wizard.getCharacterHtml()
-    document.getElementById('monster').innerHTML = monster.getCharacterHtml()
     switch(monster.name) {
         case "Giant Spider":
             setTimeout(function() {
@@ -306,6 +405,45 @@ function render() {
             }, 2000);
             break
     }
+}
+
+
+function endGame() {
+    isWaiting = true
+    menuMusic.volume = 0.7
+    menuMusic.play()
+    const endMessage = wizard.health === 0 && monster.health === 0 ?
+        "No victors - all creatures are dead" :
+        wizard.health > 0 ? `
+        After a long and grueling battle, Zoltan emerged victorious over Malakar the Dark Lord and saved the land from destruction.
+        The people rejoiced and hailed him as a hero. With the evil vanquished, the world was once again filled with hope and light.
+        Zoltan's name would be remembered for generations to come as the one who saved the land from darkness.
+        ` :
+            `
+            The battle was intense and unforgiving. Zoltan fought with all his might, but in the end, he was defeated by Malakar the Dark Lord's power.
+            As he lay there, battered and broken, he knew that his journey had come to an end. The people mourned his loss and the world fell into a deep despair.
+            The darkness that had been vanquished before had returned, stronger than ever.
+            Zoltan's name would be remembered as a brave warrior who gave his life in the fight against evil.
+            `
+
+    const endEmoji = wizard.health > 0 ? "🔮" : "☠️"
+        setTimeout(()=>{
+            document.body.innerHTML = `
+                <div class="end-game">
+                    <h2>Game Over</h2> 
+                    <h3>${endMessage}</h3>
+                    <p class="end-emoji">${endEmoji}</p>
+                </div>
+                `
+        }, 2000)
+}
+
+document.getElementById("attack-button").addEventListener('click', attack)
+
+function render() {
+    menuMusic.pause()
+    document.getElementById('hero').innerHTML = wizard.getCharacterHtml()
+    document.getElementById('monster').innerHTML = monster.getCharacterHtml()
 }
 
 const wizard = new Character(characterData.hero)

@@ -2,7 +2,7 @@ const characterData = {
     hero: {
         name: "Zoltan",
         avatar: "/images/wizard 3 bby.jpg",
-        health: 1000,
+        health: 150,
         diceCount: 3,
         currentDiceScore: []
     },
@@ -25,8 +25,8 @@ const characterData = {
     ent: {
         name: "Ent",
         avatar: "images/The Dark Forest/ent tree.jpg",
-        health: 50,
-        diceCount: 1,
+        health: 30,
+        diceCount: 2,
         currentDiceScore: [],
         isDarkForest: true
     },
@@ -42,7 +42,7 @@ const characterData = {
         name: "Arachnus",
         avatar: "images/The Dark Forest/spider queen.jpg",
         health: 50,
-        diceCount: 3,
+        diceCount: 4,
         currentDiceScore: [],
         isDarkForest: true
     },
@@ -83,7 +83,7 @@ const characterData = {
         name: "Grimgor",
         avatar: "images/Mountains of Madness/Grimgor troll king.jpg",
         health: 60,
-        diceCount: 3,
+        diceCount: 4,
         currentDiceScore: [],
         isMountainsOfMadness: true
     },
@@ -100,7 +100,7 @@ const characterData = {
         name: "Zombies",
         avatar: "images/Plains of Despair/zombie.jpg",
         health: 40,
-        diceCount: 1,
+        diceCount: 2,
         currentDiceScore: [],
         isPlainsOfDispair: true
     },
@@ -108,7 +108,7 @@ const characterData = {
         name: "Minotaur",
         avatar: "images/Plains of Despair/minotaurs.jpg",
         health: 50,
-        diceCount: 2,
+        diceCount: 3,
         currentDiceScore: [],
         isPlainsOfDispair: true
     },
@@ -124,7 +124,7 @@ const characterData = {
         name: "Drakon",
         avatar: "images/Plains of Despair/Drakon the dragon lord.jpg",
         health: 60,
-        diceCount: 3,
+        diceCount: 4,
         currentDiceScore: [],
         isPlainsOfDispair: true
     },
@@ -157,7 +157,7 @@ const characterData = {
         name: "Gargantuan",
         avatar: "images/Castle of Shadows/gargantuan.png",
         health: 60,
-        diceCount: 1,
+        diceCount: 2,
         currentDiceScore: [],
         isCastleOfShadows: true
     },
