@@ -416,7 +416,9 @@ function endGame() {
     menuMusic.volume = 0.7
     menuMusic.play()
     const endMessage = wizard.health === 0 && monster.health === 0 ?
-        "No victors - all creatures are dead" :
+        `After a long and grueling battle, Zoltan emerged victorious over Malakar the Dark Lord and saved the land from destruction.
+        The people rejoiced and hailed him as a hero. With the evil vanquished, the world was once again filled with hope and light.
+        Zoltan's name would be remembered for generations to come as the one who saved the land from darkness` :
         wizard.health > 0 ? `
         After a long and grueling battle, Zoltan emerged victorious over Malakar the Dark Lord and saved the land from destruction.
         The people rejoiced and hailed him as a hero. With the evil vanquished, the world was once again filled with hope and light.

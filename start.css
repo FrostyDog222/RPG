@@ -17,8 +17,8 @@ button {
     background-color: #fcc02a;
     border: 2px solid #963404;
     outline: none;
-    padding-left:5vw;
-    padding-right:5vw;
+    padding: 0 1.8rem;
+    margin: 2.5rem 0 0 0;
     text-align: center;
     text-decoration: none;
     display: inline-block;
@@ -26,10 +26,10 @@ button {
     border-radius: 6px;
     cursor: pointer;
     color:#963404;
-    height:9vh;
+    height:4rem;
     box-shadow: 0px 6px 10px -4px rgba(0,0,0,0.4);
-    margin: 2em 0 0 0;
 }
+
 
 button:active {
     background-color: #c2b28c;
@@ -48,8 +48,8 @@ button:active {
 }
 
 .logo {
-    width: 150%;
-    margin: -90px 0 30px -140px;
+    width: 45.5rem;
+    margin: -6rem 0 2rem -3rem;
 }
 
 p {
@@ -64,10 +64,11 @@ h1{
     position: absolute;
     left: 0%;
     top: 0%;
-    padding: 10px;
+    padding: .6rem;
     border-radius: 100%;
-    margin: 10px;
-    width: 80px;
+    margin: .6rem;
+    width: 4rem;
+    height: 4rem;
 }
 
 #music-btn > img {
@@ -77,7 +78,7 @@ h1{
 }
 
 /* Starting page for small screens */
-@media only screen and (max-width: 550px) {
+@media(max-width:550px) {
     #music-btn {
         position: absolute;
         left: 80%;
@@ -93,13 +94,14 @@ h1{
 
     .container > p {
         font-size: 18px;
-        margin-left: -5.5em;
-        min-width: 400px;
+        margin-left: -6.5rem;
+        min-width: 25rem;
         
     }
     
     .logo {
-        width: 400px;
+        width: 30rem;
+        margin: -5rem 0 2rem -9rem;
     }
 
 }

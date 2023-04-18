@@ -45,14 +45,16 @@ function Character(data) {
                 document.querySelector('body').style.backgroundRepeat = 'no-repeat'
                 document.querySelector('body').style.backgroundPosition = 'center center'
                 document.querySelector('body').style.backgroundAttachment = 'fixed'
+                document.querySelector('body').style.backgroundSize = 'cover'
                 forest.volume = 0.3
                 forest.loop = true
                 forest.play()
             }else if(isMountainsOfMadness){
-                document.querySelector('body').style.backgroundImage = 'url("/images/Mountains of Madness/mountains.png")'
+                document.querySelector('body').style.backgroundImage = 'url("/images/Mountains of Madness/mountains.jpg")'
                 document.querySelector('body').style.backgroundRepeat = 'no-repeat'
                 document.querySelector('body').style.backgroundPosition = 'center center'
                 document.querySelector('body').style.backgroundAttachment = 'fixed'
+                document.querySelector('body').style.backgroundSize = 'cover'
                 forest.pause()
                 mountains.volume = 0.2
                 mountains.loop = true
@@ -62,6 +64,7 @@ function Character(data) {
                 document.querySelector('body').style.backgroundRepeat = 'no-repeat'
                 document.querySelector('body').style.backgroundPosition = 'center center'
                 document.querySelector('body').style.backgroundAttachment = 'fixed'
+                document.querySelector('body').style.backgroundSize = 'cover'
                 mountains.pause()
                 wasteland.volume = 0.2
                 wasteland.loop = true
@@ -72,12 +75,14 @@ function Character(data) {
                 document.querySelector('body').style.backgroundRepeat = 'no-repeat'
                 document.querySelector('body').style.backgroundPosition = 'center center'
                 document.querySelector('body').style.backgroundAttachment = 'fixed'
+                document.querySelector('body').style.backgroundSize = 'cover'
                 wasteland.pause()
                 castle.volume = 0.2
                 castle.loop = true
                 castle.play()
             }
         }
+        
         handleEnviroment()
         const healthBar = this.getHealthBarHtml()
         return `

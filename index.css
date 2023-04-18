@@ -11,6 +11,7 @@ body {
     user-select: none;
 }
 
+
 main {
     display:flex;
     flex-direction: row;
@@ -23,8 +24,8 @@ main {
 .character-card {
     height: 370px;
     margin-top: .5rem;
-    width:37vw;
-    max-width: 230px;
+    width: 15rem;
+    height: 22rem;
     padding: 1vh 1vw 7rem;
     font-size: 1.6rem;
     color: white;
@@ -38,15 +39,15 @@ main {
 }
 
 .name {
-    margin: 1vh 0;
+    margin: 1rem 0;
     width:100%;
     letter-spacing: 0.08em;
-    font-size: 90%;
+    font-size: 100%;
 }
 
 .avatar {
-    width: 200px;
-    height: 250px;
+    width: 14rem;
+    height: 15rem;
     border: 2px solid #000721;
     opacity: 0.8;
     border-radius: 10px;
@@ -70,7 +71,7 @@ main {
 
 .health-bar-outer {
     background: #171217;
-    height: 1vh;
+    height: 0.45rem;
     width:90%;
     margin: 0 5%;
     border-radius: 2px;
@@ -138,7 +139,7 @@ button {
     border-radius: 6px;
     cursor: pointer;
     color:#963404;
-    height:9vh;
+    height:4rem;
     box-shadow: 0px 6px 10px -4px rgba(0,0,0,0.4);
 }
 
@@ -226,7 +227,8 @@ button:focus { outline: 0 }
 #coins {
     padding: 0 0em 0 0em;
     margin: 0.5em 0;
-    font-size: 30px;
+    font-size: 1.9rem;
+    text-shadow: 1px 1px #cccccc;
 }
 
 .coins-info {
@@ -336,7 +338,7 @@ ul {
  @media(max-width:550px){
     .character-card {
         border: 0.2rem solid #000721;
-        height:12.5rem;
+        height:15.5rem;
         width: 15rem;
     }
     .character-card > img {
@@ -348,22 +350,23 @@ ul {
     }
 }
 
-@media(min-width:550px){
+@media(max-width:550px){
     .name {
-    margin: 2vh 0;
+    margin: 1rem 0;
     font-size: 100%;
 }
 }
 
-@media(min-width:550px){
+@media(max-width:550px){
     .avatar {
         width: 25vh;
+        height: 20vh;
     }
 }
 
-@media(min-width:550px){
+@media(max-width:550px){
     .health {
-        margin: 2vh 5%;
+        margin: 1rem 5%;
     }
 }
 
@@ -412,7 +415,7 @@ ul {
         width: 100px;
         height: 60px;
         border-radius: 50px;
-        margin: 0 10em 0 -.5em;
+        margin: 0 10.5em 0 -.5em;
     }
 
     .shop-description {
@@ -439,7 +442,7 @@ ul {
 }
 
 
-@media only screen and (max-width: 550px) {
+@media(max-width:550px) {
     
     #story-container {
         width: 300px;
@@ -462,7 +465,7 @@ ul {
     }
 }
 
-@media only screen and (max-width: 550px) {
+@media(max-width:550px) {
     .end-game{
         margin: 2em 20em;
         text-align: center;
