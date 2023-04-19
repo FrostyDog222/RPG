@@ -437,7 +437,7 @@ ul {
 }
 
 
-@media(max-width:550px) {
+@media(max-width:768px) {
     #story-container {
         width: 300px;
         margin: 1em 1em 20em 1em;
@@ -459,7 +459,7 @@ ul {
     }
 }
 
-@media(max-width:550px) {
+@media(max-width:768px) {
     .end-game{
         margin: 2em 20em;
         padding: 1em;

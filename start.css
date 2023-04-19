@@ -78,7 +78,7 @@ h1{
 }
 
 /* Starting page for small screens */
-@media(max-width:550px) {
+@media(max-width:768px) {
     #music-btn {
         position: absolute;
         left: 80%;
