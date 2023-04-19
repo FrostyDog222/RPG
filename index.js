@@ -215,7 +215,7 @@ function getNewMonster() {
     }else if (nextMonsterData.name === "Shadow Demon"){
         money = money + 200
     }else {
-        money = money + Math.floor(Math.random() * 30) + 10
+        money = money + Math.floor(Math.random() * 40) + 10
     }
     extraHealth()
     addCoins()
