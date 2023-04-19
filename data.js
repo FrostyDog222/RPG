@@ -18,7 +18,7 @@ const characterData = {
         name: "Werewolf",
         avatar: "/images/The Dark Forest/werewolf.jpg",
         health: 30,
-        diceCount: 3,
+        diceCount: 2,
         currentDiceScore: [],
         isDarkForest: true
     },
@@ -67,15 +67,15 @@ const characterData = {
         name: "Harpie",
         avatar: "images/Mountains of Madness/harpies.jpg",
         health: 30,
-        diceCount: 4,
+        diceCount: 3,
         currentDiceScore: [],
         isMountainsOfMadness: true
     },
     goblin: {
         name: "Goblin",
         avatar: "images/Mountains of Madness/goblin.jpg",
-        health: 30,
-        diceCount: 3,
+        health: 25,
+        diceCount: 2,
         currentDiceScore: [],
         isMountainsOfMadness: true
     },
@@ -99,7 +99,7 @@ const characterData = {
     zombies: {
         name: "Zombies",
         avatar: "images/Plains of Despair/zombie.jpg",
-        health: 35,
+        health: 30,
         diceCount: 3,
         currentDiceScore: [],
         isPlainsOfDispair: true
@@ -140,7 +140,7 @@ const characterData = {
     skeletonKnight: {
         name: "Skeleton Knight",
         avatar: "images/Castle of Shadows/skeleton Knight.jpg",
-        health: 30,
+        health: 35,
         diceCount: 3,
         currentDiceScore: [],
         isCastleOfShadows: true
@@ -148,7 +148,7 @@ const characterData = {
     necromancer: {
         name: "Necromancer",
         avatar: "images/Castle of Shadows/necromancer.jpg",
-        health: 35,
+        health: 30,
         diceCount: 3,
         currentDiceScore: [],
         isCastleOfShadows: true
