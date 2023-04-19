@@ -478,7 +478,7 @@ ul {
 }
 
 
-@media(min-height:1080px){
+@media only screen and (min-width: 768px) and (max-width: 991px){
     /* Story */
     #story-container {
         width: 46rem;
