@@ -171,7 +171,12 @@ button:focus { outline: 0 }
 
 .end-emoji{
     font-size: 80px;
-    margin: .5em;
+    margin: 0.2em;
+}
+
+.back{
+    font-size: 1.2rem;
+    margin: 2rem 0 0 0;
 }
 
 .container {

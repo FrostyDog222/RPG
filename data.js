@@ -9,7 +9,7 @@ const characterData = {
     spider: {
         name: "Giant Spider",
         avatar: "/images/The Dark Forest/spider.jpg",
-        health: 30,
+        health: 25,
         diceCount: 2,
         currentDiceScore: [],
         isDarkForest: true
@@ -25,7 +25,7 @@ const characterData = {
     ent: {
         name: "Ent",
         avatar: "images/The Dark Forest/ent tree.jpg",
-        health: 30,
+        health: 35,
         diceCount: 3,
         currentDiceScore: [],
         isDarkForest: true
@@ -99,7 +99,7 @@ const characterData = {
     zombies: {
         name: "Zombies",
         avatar: "images/Plains of Despair/zombie.jpg",
-        health: 40,
+        health: 35,
         diceCount: 3,
         currentDiceScore: [],
         isPlainsOfDispair: true
@@ -107,7 +107,7 @@ const characterData = {
     minotaur: {
         name: "Minotaur",
         avatar: "images/Plains of Despair/minotaurs.jpg",
-        health: 50,
+        health: 40,
         diceCount: 3,
         currentDiceScore: [],
         isPlainsOfDispair: true

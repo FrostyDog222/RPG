@@ -416,36 +416,46 @@ function attack() {
 
 
 function endGame() {
-    isWaiting = true
-    menuMusic.volume = 0.7
-    menuMusic.play()
-    const endMessage = wizard.health === 0 && monster.health === 0 ?
-        `After a long and grueling battle, Zoltan emerged victorious over Malakar the Dark Lord and saved the land from destruction.
-        The people rejoiced and hailed him as a hero. With the evil vanquished, the world was once again filled with hope and light.
-        Zoltan's name would be remembered for generations to come as the one who saved the land from darkness` :
-        wizard.health > 0 ? `
-        After a long and grueling battle, Zoltan emerged victorious over Malakar the Dark Lord and saved the land from destruction.
-        The people rejoiced and hailed him as a hero. With the evil vanquished, the world was once again filled with hope and light.
-        Zoltan's name would be remembered for generations to come as the one who saved the land from darkness.
-        ` :
-            `
-            The battle was intense and unforgiving. Zoltan fought with all his might, but in the end, he was defeated by Malakar the Dark Lord's power.
-            As he lay there, battered and broken, he knew that his journey had come to an end. The people mourned his loss and the world fell into a deep despair.
-            The darkness that had been vanquished before had returned, stronger than ever.
-            Zoltan's name would be remembered as a brave warrior who gave his life in the fight against evil.
-            `
-
-    const endEmoji = wizard.health > 0 ? "🔮" : "☠️"
-        setTimeout(()=>{
-            document.body.innerHTML = `
-                <div class="end-game">
-                    <h2>Game Over</h2> 
-                    <h3>${endMessage}</h3>
-                    <p class="end-emoji">${endEmoji}</p>
-                </div>
-                `
-        }, 2000)
+    isWaiting = true;
+    menuMusic.volume = 0.7;
+    menuMusic.play();
+    const endMessage =
+      wizard.health === 0 && monster.health === 0
+        ? `After a long and grueling battle, Zoltan emerged victorious over Malakar the Dark Lord and saved the land from destruction.
+          The people rejoiced and hailed him as a hero. With the evil vanquished, the world was once again filled with hope and light.
+          Zoltan's name would be remembered for generations to come as the one who saved the land from darkness
+          `
+          
+        : wizard.health > 0
+        ? `
+          After a long and grueling battle, Zoltan emerged victorious over Malakar the Dark Lord and saved the land from destruction.
+          The people rejoiced and hailed him as a hero. With the evil vanquished, the world was once again filled with hope and light.
+          Zoltan's name would be remembered for generations to come as the one who saved the land from darkness.
+          `
+        : `
+              The battle was intense and unforgiving. Zoltan fought with all his might, but in the end, he was defeated by Malakar the Dark Lord's power.
+              As he lay there, battered and broken, he knew that his journey had come to an end. The people mourned his loss and the world fell into a deep despair.
+              The darkness that had been vanquished before had returned, stronger than ever.
+              Zoltan's name would be remembered as a brave warrior who gave his life in the fight against evil.
+              `;
+  
+    const endEmoji = wizard.health > 0 ? "🔮" : "☠️";
+    setTimeout(() => {
+      document.body.innerHTML = `
+                  <div class="end-game">
+                      <h2>Game Over</h2> 
+                      <h3>${endMessage}</h3>
+                      <p class="back">CLICK ANYWERE TO GO BACK TO THE MENU</p>
+                      <p class="end-emoji">${endEmoji}</p>
+                  </div>
+                  `;
+      document.body.addEventListener("click", function() {
+        window.location.href = "index.html";
+      });
+  
+    }, 2000);
 }
+  
 
 document.getElementById("attack-button").addEventListener('click', attack)
 
