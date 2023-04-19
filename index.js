@@ -48,6 +48,7 @@ const healthPotion = document.getElementById('health-potion')
 const extraHealthPotion = document.getElementById('extra-health-potion')
 const staff = document.getElementById('staff')
 const armor = document.getElementById('armor')
+const buy = new Audio('/utility/sounds/buy.mp3')
 let money = null
 let isExtraHealthPotion = false
 let isStaff = false
@@ -56,6 +57,7 @@ let isArmor = false
 // Health Potion
 healthPotion.addEventListener('click', function(){
     if(money >= 30 && wizard.health < 150){
+        buy.play()
         wizard.health = wizard.health + 30
         if(wizard.health > 150){
             wizard.health = 150
@@ -63,13 +65,13 @@ healthPotion.addEventListener('click', function(){
         money = money - 30
         addCoins()
         render()
-        console.log(wizard.health)
     }
 })
 
 // Healing overtime potion
 extraHealthPotion.addEventListener('click', function(){
     if(money >= 75){
+        buy.play()
         money = money - 75
         addCoins()
         render()
@@ -94,6 +96,7 @@ function extraHealth(){
 // Staff +4 damage 
 staff.addEventListener('click', function(){
     if(money >= 175){
+        buy.play()
         money = money - 175
         addCoins()
         render()
@@ -118,6 +121,7 @@ function extraDamage(){
 
 armor.addEventListener('click', function(){
     if(money >= 175){
+        buy.play()
         money = money - 175
         addCoins()
         render()
@@ -211,7 +215,7 @@ function getNewMonster() {
     }else if (nextMonsterData.name === "Shadow Demon"){
         money = money + 200
     }else {
-        money = money + Math.floor(Math.random() * 40) + 10
+        money = money + Math.floor(Math.random() * 30) + 10
     }
     extraHealth()
     addCoins()

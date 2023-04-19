@@ -77,7 +77,7 @@ function Character(data) {
                 document.querySelector('body').style.backgroundAttachment = 'fixed'
                 document.querySelector('body').style.backgroundSize = 'cover'
                 wasteland.pause()
-                castle.volume = 0.2
+                castle.volume = 0.4
                 castle.loop = true
                 castle.play()
             }

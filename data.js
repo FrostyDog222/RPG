@@ -10,15 +10,15 @@ const characterData = {
         name: "Giant Spider",
         avatar: "/images/The Dark Forest/spider.jpg",
         health: 30,
-        diceCount: 1,
+        diceCount: 2,
         currentDiceScore: [],
         isDarkForest: true
     },
     werewolf: {
         name: "Werewolf",
         avatar: "/images/The Dark Forest/werewolf.jpg",
-        health: 25,
-        diceCount: 2,
+        health: 30,
+        diceCount: 3,
         currentDiceScore: [],
         isDarkForest: true
     },
@@ -26,7 +26,7 @@ const characterData = {
         name: "Ent",
         avatar: "images/The Dark Forest/ent tree.jpg",
         health: 30,
-        diceCount: 2,
+        diceCount: 3,
         currentDiceScore: [],
         isDarkForest: true
     },
@@ -50,7 +50,7 @@ const characterData = {
         name: "Troll",
         avatar: "images/Mountains of Madness/troll.jpg",
         health: 30,
-        diceCount: 2,
+        diceCount: 3,
         currentDiceScore: [],
         isMountainsOfMadness: true,
         isMountainsRegion: true
@@ -59,14 +59,14 @@ const characterData = {
         name: "Yeti",
         avatar: "images/Mountains of Madness/yeti.png",
         health: 35,
-        diceCount: 2,
+        diceCount: 3,
         currentDiceScore: [],
         isMountainsOfMadness: true
     },
     harpie: {
         name: "Harpie",
         avatar: "images/Mountains of Madness/harpies.jpg",
-        health: 20,
+        health: 30,
         diceCount: 4,
         currentDiceScore: [],
         isMountainsOfMadness: true
@@ -74,7 +74,7 @@ const characterData = {
     goblin: {
         name: "Goblin",
         avatar: "images/Mountains of Madness/goblin.jpg",
-        health: 20,
+        health: 30,
         diceCount: 3,
         currentDiceScore: [],
         isMountainsOfMadness: true
@@ -91,7 +91,7 @@ const characterData = {
         name: "Gargoyle",
         avatar: "images/Plains of Despair/Gargoyles.jpg",
         health: 35,
-        diceCount: 2,
+        diceCount: 3,
         currentDiceScore: [],
         isPlainsOfDispair: true,
         isWastelandRegion: true
@@ -100,7 +100,7 @@ const characterData = {
         name: "Zombies",
         avatar: "images/Plains of Despair/zombie.jpg",
         health: 40,
-        diceCount: 2,
+        diceCount: 3,
         currentDiceScore: [],
         isPlainsOfDispair: true
     },
@@ -116,7 +116,7 @@ const characterData = {
         name: "Mummie",
         avatar: "images/Plains of Despair/mummies.jpg",
         health: 30,
-        diceCount: 2,
+        diceCount: 3,
         currentDiceScore: [],
         isPlainsOfDispair: true
     },
@@ -132,7 +132,7 @@ const characterData = {
         name: "Shadow Demon",
         avatar: "images/Castle of Shadows/shadow demon.jpg",
         health: 35,
-        diceCount: 2,
+        diceCount: 3,
         currentDiceScore: [],
         isCastleOfShadows: true,
         isCastleRegion: true
@@ -140,7 +140,7 @@ const characterData = {
     skeletonKnight: {
         name: "Skeleton Knight",
         avatar: "images/Castle of Shadows/skeleton Knight.jpg",
-        health: 25,
+        health: 30,
         diceCount: 3,
         currentDiceScore: [],
         isCastleOfShadows: true
@@ -148,7 +148,7 @@ const characterData = {
     necromancer: {
         name: "Necromancer",
         avatar: "images/Castle of Shadows/necromancer.jpg",
-        health: 30,
+        health: 35,
         diceCount: 3,
         currentDiceScore: [],
         isCastleOfShadows: true
@@ -157,7 +157,7 @@ const characterData = {
         name: "Gargantuan",
         avatar: "images/Castle of Shadows/gargantuan.png",
         health: 60,
-        diceCount: 2,
+        diceCount: 3,
         currentDiceScore: [],
         isCastleOfShadows: true
     },
