@@ -443,7 +443,7 @@ function endGame() {
     setTimeout(() => {
       document.body.innerHTML = `
                   <div class="end-game">
-                      <h2>${wizard.health > monster.health ? "You Win!" : "Game Over"}</h2> 
+                      <h2>${wizard.health > monster.health ? "You Won!" : "Game Over"}</h2> 
                       <h3>${endMessage}</h3>
                       <p class="back">CLICK ANYWERE TO GO BACK TO THE MENU</p>
                       <p class="end-emoji">${endEmoji}</p>
