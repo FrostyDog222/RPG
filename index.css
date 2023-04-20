@@ -126,7 +126,7 @@ main {
 }
 
 button {
-    margin-top: .5rem;
+    margin: .5rem 0;
     font-family: 'MedievalSharp', cursive;
     background-color: #fcc02a;
     border: 2px solid #963404;
@@ -134,7 +134,6 @@ button {
     padding: 0 1.8rem;
     text-align: center;
     text-decoration: none;
-    display: inline-block;
     font-size: 1.5rem;
     border-radius: 6px;
     cursor: pointer;
@@ -157,26 +156,35 @@ button:active {
 button:focus { outline: 0 }
 
 .end-game{
-    margin: 6vh 20em;
+    width: 45rem;
+    margin: 3rem 0 0;
     text-align: center;
     background: rgba(0, 0, 0, 0.8);
     border-radius: 50px;
 }
 
+.end-game > h2 {
+    font-size: 3.5rem;
+    padding: 0;
+    margin: 1rem 0 0 0;
+}
+
 .end-game > h3{
-    font-size: 25px;
-    width: 70%;
+    font-size: 1.5rem;
+    width: 80%;
     margin: 0 auto;
+    padding: 2rem 0 1.5rem;
 }
 
 .end-emoji{
     font-size: 80px;
-    margin: 0.2em;
+    margin: 0.2em 0 1.5rem;
 }
 
 .back{
     font-size: 1.2rem;
-    margin: 2rem 0 0 0;
+    margin: .5rem 0 0 0;
+    color: red;
 }
 
 .container {
@@ -194,7 +202,7 @@ button:focus { outline: 0 }
     left: 0;
     z-index: 4;
     width: 100%;
-    height: 100%;
+    height: 106%;
     background: rgb(51,43,55);
 }
 
@@ -207,7 +215,7 @@ button:focus { outline: 0 }
     padding: 4em 5em 4em 5em;
     border-radius: 20px;
     text-align: center;
-    margin: 10em auto;
+    margin: 4rem auto;
 }
 
 #story-container > p {
@@ -232,7 +240,7 @@ button:focus { outline: 0 }
 #coins {
     padding: 0 0em 0 0em;
     margin: 0.5em 0;
-    font-size: 1.9rem;
+    font-size: 2.2rem;
     text-shadow: 1px 1px #cccccc;
 }
 
@@ -241,8 +249,8 @@ button:focus { outline: 0 }
 }
 
 .coin-icon {
-    width: 50px;
-    height: 50px;
+    width: 60px;
+    height: 60px;
     padding: 0;
     margin: 0.4em 0 0 1.5em;
 }
@@ -259,7 +267,7 @@ button:focus { outline: 0 }
     left: 0%;
     margin: 0 1em;
     width: 470px;
-    height: 790px;
+    height: 750px;
     background: rgb(138, 123, 146);
     padding: 4.5em 1em 1em 1em;
     border-radius: 20px;
@@ -276,22 +284,23 @@ ul {
 .shop-slot > img {
     width: 90px;
     height: 110px;
-    margin: 0.5em 0 0 0;
+    margin: 0.6em .5rem 0;
     border-radius: 20px;
 }
 
 .shop-description {
     width: 250px;
-    margin: 1em 0.5em;
+    margin: .6rem .8rem;
     font-family: 'Times New Roman', Times, serif;
 }
 
 .shop-slot {
     display: flex;
     background-color: #171217;
-    margin: 0.6em 0;
+    margin: 0.6em 0 0;
     padding: 1em;
     border-radius: 20px;
+    height: 9rem;
 }
 
 .buy-button {
@@ -299,8 +308,8 @@ ul {
     width: 20px;
     height: 80px;
     padding: 1em 2.5em 1em 0.7em;
-    margin: 0.2em 0 0 0;
     font-size: 20px;
+    margin: .6rem 0 0;
 }
 
 .price-label {
@@ -331,120 +340,62 @@ ul {
     100% { transform: translate(0, 0); }
 }
 
-@media(max-width:550px){
+@media(max-width: 1180px){
+    /* Main Game */
     main {
-        display:flex;
-        flex-direction: column;
-        align-items: center;
-        margin: .5rem;
-        gap: 0;
-     } 
- }
+        margin:5.5rem auto 2rem;
+    } 
 
- @media(max-width:550px){
     .character-card {
-        border: 0.2rem solid #000721;
-        height:15.5rem;
+        margin-top: .5rem;
         width: 15rem;
+        height: 20rem;
     }
-    .character-card > img {
-        width: 11rem;
-        height: 10rem;
-    }
-    #attack-button{
-        margin: 0;
-    }
-}
 
-@media(max-width:550px){
     .name {
-        margin: 1rem 0;
-        font-size: 100%;
+        margin: .8rem 0;
     }
+
     .avatar {
-        width: 25vh;
-        height: 20vh;
+        width: 14rem;
+        height: 15rem;
     }
+
     .health {
-        margin: 1rem 5%;
+        margin: 1.3vh 5%;
     }
+
+    .health-bar-outer {
+        height: 0.35rem;
+    }
+
     .dice-container {
-        height: 18%;
-        border-bottom-left-radius: 3px;
-        border-bottom-right-radius: 3px;
+        gap: 1rem;
     }
+
     .dice-container .dice, .dice-container .placeholder-dice{
-        height:6vh;
-        width:6vh;
-        line-height: 6vh;
+        height: 3.5rem;
+        width: 3.5rem;
+        line-height: 3.5rem;
     }
 }
-
-
-@media(max-width:550px){
-    button {
-        margin: 0;
-        width: 8rem;
-    }
-    
-    #shop {
-        position:absolute;
-        top: 0.8%;
-        left: 0%;
-        margin: 0;
-        width: 455px;
-        height: 700px;
-        background: rgb(138, 123, 146);
-        padding: 4em 1em 1em 1em;
-        border-radius: 20px;
-        z-index: 2;
-        display: none;
-    }
-    #shop > img {
-        width: 30px;
-        height: 30px;
-    }
-
-    #shop-button {
-        padding: 0;
-        width: 100px;
-        height: 60px;
-        border-radius: 50px;
-        margin: 0 10.5em 0 -.5em;
-    }
-
-    .shop-description {
-        width: 250px;
-        margin: 1em 1em;
-    }
-    
-    .shop-slot {
-        display: flex;
-        height: 150px;
-        background-color: #171217;
-        margin: 0.6em 0;
-        padding: 0.2em 1em;
-        border-radius: 20px;
-    }
-
-    #coins {
-        padding: 0;
-        margin: 0.5em 0;
-        font-size: 30px;
-    }
-    
-    
-}
-
 
 @media(max-width:768px) {
+    /* Story */
+    #story-body {
+        width: 100%;
+        height: 100%;
+    }
+
     #story-container {
-        width: 300px;
-        margin: 1em 1em 20em 1em;
+        width: 25rem;
+        margin: 2rem auto 0 ;
+        padding: 2rem ;
+        margin: 3rem auto 0;
     }
     
     #story-container > p {
-        font-size: 20px;
+        font-size: 25px;
     }
     
     #story-container > h1{
@@ -453,184 +404,111 @@ ul {
 
     #story-container > button {
         padding: 0 1.8rem;
+        margin: 0 0 1rem;
         text-align: center;
         height:9vh;
         width: 170px;
-    }
-}
-
-@media(max-width:768px) {
-    .end-game{
-        margin: 2em 20em;
-        padding: 1em;
-    }
-    
-    .end-game > h3{
-        font-size: 20px;
-        width: 400px;
-        margin: 0 auto;
-    }
-    
-    .end-emoji{
-        font-size: 70px;
-        margin: 0.5em;
-    }
-}
-
-
-@media only screen and (min-width: 768px) and (max-width: 991px){
-    /* Story */
-    #story-container {
-        width: 46rem;
-        margin: 13rem auto;
-    }
-    
-    #story-container > p {
-        font-size: 3rem;
-    }
-    
-    #story-container > h1{
-        font-size: 4rem;
-    }
-
-    #story-container > button {
-        padding: 0 1.8rem;
-        text-align: center;
-        height: 10rem;
-        width: 20rem;
-        font-size: 3.3rem;
-    }
-
-    /* Main game */
-    .character-card {
-        margin: 10rem 0 0 0;
-        width: 27rem;
-        height: 48rem;
-        font-size: 1.6rem;
-    }
-    .name {
-        margin: 1rem 0;
-        font-size: 3.5rem;
-    }
-    .avatar {
-        width: 25rem;
-        height: 30rem;
-    }
-    .health {
-        font-size: 2.5rem;
-    }
-    .health-bar-outer .health-bar-inner {
-        height: 1.5rem;
-    }
-    .dice-container {
-        width: 28..3rem;
-    }
-    .dice-container .dice, .dice-container .placeholder-dice{
-        height:  7rem;
-        width: 7rem;
-        line-height: 7rem;
-        font-size: 3.6rem;
-    }
-    button {
-        font-size: 6rem;
-        margin: 0 2rem;
-        width: 40rem;
-        height: 15rem;
-    }
-    
-    /* Shop */
-    #shop {
-        position:absolute;
-        top: 0.8%;
-        left: 0%;
-        margin: 0;
-        width: 75rem;
-        height: 120rem;
-        padding: 10em 2em 2em 2em;
-        border-radius: 20px;
-        z-index: 2;
-        display: none;
-    }
-    .shop-slot > img {
-        width: 20rem;
-        height: 20rem;
-        padding: 1rem;
-        border-radius: 20%;
-    }
-
-    #shop-button {
-        font-size: 3rem;
-        margin: 2rem;
-        width: 30rem;
-        height: 9rem;
-        margin: 0 .6em 0 -.2em;
-        font-size: 4rem;
-    }
-    
-    #coins {
-        padding: 0;
-        margin: 0;
-        font-size: 10rem;
-    }
-    .coin-icon {
-        width: 9rem;
-        height: 9rem;
-    }
-
-    .shop-description {
-        width: 30rem;
-        height: 15rem;
-        font-size: 2.7rem;
-        padding: .5rem;
-    }
-    
-    .shop-slot {
-        width: 74rem;
-        height: 28rem;
-        margin: 0.6em 0;
-        padding: 0.2em 1em;
-        border-radius: 20px;
-    }
-
-    .buy-button {
-        text-align: center;
-        width: 15rem;
-        height: 15rem;
-        padding: 2rem;
-        margin: 0.2em 0 0 0;
-        font-size: 5rem;
-    }
-    
-    .price-label {
-        font-size: 4rem;
-        font-weight: bold;
-    }
-      
-    .price-value {
-        font-size: 4rem;
-        color: gold;
+        font-size: 1.5rem;
     }
 
     /* EndGame */
-
     .end-game{
-        width: 50rem;
-        height: 80rem;
-        margin: 1em 20em;
-        border-radius: 50px;
-        padding: 1em;
-        font-size: 4rem
+        width: 40rem;
+    }
+    
+    .end-game > h2 {
+        font-size: 3rem;
+        padding: 0;
+        margin: 1rem 0 0 0;
     }
     
     .end-game > h3{
+        font-size: 1.4rem;
+    }
+
+    /* Shop */
+    #shop {
+        margin: 0 .5em;
+        width: 430px;
+        height: 650px;
+        padding: 4.8em 1.2em 1em;
+    }
+
+    .shop-slot > img {
+        width: 100px;
+        height: 100px;
+    }
+
+    .shop-description {
+        width: 200px;
+    }
+
+    .shop-slot {
+        padding: .5rem;
+        width: 26rem;
+        height: 8.5rem;
+    }
+
+    .buy-button {
+        width: 30px;
+        height: 80px;
         font-size: 20px;
-        font-size: 2.5rem;
-        margin: 0 auto;
+    }
+
+    .price-label {
+        font-weight: bold;
+        padding: 0;
+        margin-left: .2rem;
     }
     
-    .end-emoji{
-        font-size: 10rem;
-        margin: 0.5em;
+    .price-value {
+        color: gold;
+        margin: .5rem 0 0 .25rem;
     }
 
 }
+
+@media (max-width: 550px){
+
+    .character-card {
+        margin-top: .5rem;
+        width: 13rem;
+        height: 17rem;
+    }
+
+    .name {
+        margin: .8rem 0;
+        font-size: 1.4rem;
+    }
+
+    .avatar {
+        width: 12rem;
+        height: 12rem;
+    }
+
+    .dice-container .dice, .dice-container .placeholder-dice{
+        height: 3.2rem;
+        width: 3.2rem;
+        line-height: 3.2rem;
+    }
+
+    #shop {
+        padding: 4.8em .8em 1em;
+    }
+
+    /* EndGame */
+    .end-game{
+        width: 30rem;
+    }
+    
+    .end-game > h2 {
+        font-size: 2.5rem;
+        padding: 0;
+        margin: 1rem 0 0 0;
+    }
+    
+    .end-game > h3{
+        font-size: 1.3rem;
+    }
+}
+

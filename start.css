@@ -39,9 +39,9 @@ button:active {
 
 
 .container {
-    width: 600px;
+    width: 100vh;
     text-align: center;
-    margin: 4vh;
+    margin: 5vh;
     background: rgb(23, 12, 29, 0.7);
     padding: 8em 10em 4em 10em;
     border-radius: 20px;
@@ -62,8 +62,8 @@ h1{
 
 #music-btn {
     position: absolute;
-    left: 0%;
-    top: 0%;
+    top:5%;
+    right: 0%;
     padding: .6rem;
     border-radius: 100%;
     margin: .6rem;
@@ -78,73 +78,27 @@ h1{
 }
 
 /* Starting page for small screens */
+
+
+
 @media(max-width:768px) {
     #music-btn {
-        position: absolute;
-        left: 80%;
-        top: 0%;
         border-radius: 100%;
     }
 
     .container {
-        width: 180px;
-        text-align: center;
-        margin: 0;
+        width: 25rem;
+        margin: 2rem 0;
     }
 
     .container > p {
-        font-size: 18px;
-        margin-left: -6.5rem;
-        min-width: 25rem;
-        
+        font-size: 24px;
+        width: 100%;
     }
     
     .logo {
         width: 30rem;
-        margin: -5rem 0 2rem -9rem;
     }
 
 }
 
-@media only screen and (min-width: 768px) and (max-width: 991px){
-    #music-btn {
-        position: absolute;
-        left: 80%;
-        right: 0%;
-        top: 0%;
-        border-radius: 100%;
-        width: 7.5rem;
-        height: 7.5rem;
-        margin-left: 4rem;
-    }
-
-    #music-btn > img {
-        width: 4.5rem;
-        padding: 0;
-        margin: 0;
-    }
-
-    .container {
-        width: 40rem;
-        text-align: center;
-        margin: 0;
-    }
-
-    .container > p {
-        font-size: 3rem;
-        min-width: 30rem;
-    }
-    
-    .logo {
-        width: 59rem;
-        margin: -5rem 0 2rem -9rem;
-    }
-
-    button {
-        font-size: 3rem;
-        margin: 2rem;
-        width: 27rem;
-        height: 12rem;
-    }
-
-}
