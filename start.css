@@ -41,6 +41,7 @@ button:active {
 .container {
     display: absolute;
     width: 40rem;
+    height: 30rem;
     padding: 0;
     text-align: center;
     margin: 3.3rem auto;
@@ -51,7 +52,7 @@ button:active {
 
 .logo {
     width: 45.5rem;
-    margin: -6rem 0 2rem -3rem;
+    margin: -6rem 0 1.5rem -3rem;
 }
 
 p {
@@ -84,6 +85,7 @@ h1{
 
 
 @media(max-width:950px) {
+    
     #music-btn {
         border-radius: 100%;
         margin: -7.3rem 0 0 30rem;
@@ -91,23 +93,45 @@ h1{
 
     .container {
         width: 25rem;
+        height: 26rem;
         margin: 2rem 0;
     }
 
     .container > p {
         font-size: 24px;
-        width: 100%;
+        width: 30rem;
+        margin-left: -2rem;
     }
     
     .logo {
         width: 30rem;
+        margin-bottom: 0rem ;
     }
 
 }
 
 @media(max-width: 680px){
+
     #music-btn {
-        margin: -7.3rem 0 0 23.5rem;
+        margin: -7.8rem 0 0 19rem;
     }
+
+    .container {
+        width: 15rem;
+        margin: 2rem 0;
+        height: 30rem;
+    }
+
+    .container > p {
+        font-size: 23px;
+        width: 23rem;
+        margin-left: -4rem;
+    }
+
+    .logo {
+        width: 30rem;
+        margin: -6rem 0 0 -7rem;
+    }
+
 }
 
